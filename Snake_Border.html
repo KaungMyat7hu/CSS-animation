@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Snake Border 06</title>
+
+<style type="text/css">
+	
+body { margin:0;
+      padding:0;
+       }
+
+.container { width:100%;
+            height:100vh;
+            background:linear-gradient(45deg,rgba(0,0,0,.5),rgba(0,0,0,.7),rgba(0,0,0,.85),black);
+            display:flex;
+            justify-content:center;
+            align-items:center; }
+
+.snake { width:250px;
+         height:250px;
+         background:transparent;
+         box-shadow:inset 0 0 0 12.5px rgba(0,0,0,.15);
+         animation:rotation 15s linear infinite;
+         position: absolute;
+         overflow: hidden;
+          }
+
+@keyframes rotation { 0%{ transform:rotate(0deg); }
+                     100%{ transform:rotate(360deg); } }
+
+
+.snake span { width:100%;
+              height:100%;
+              background:transparent;
+              position:absolute;
+              top:0;
+              left:0; }
+
+.snake span:before { width:100%;
+                     height:100%;
+                     background: transparent;
+                     position:absolute;
+                     top:0;
+                     left:0;
+                     content:'';
+                     border-top:12.5px solid white;
+                     animation:animate 2s linear infinite; }
+
+.snake span:nth-child(1) { transform:rotate(0deg); }
+.snake span:nth-child(2) { transform:rotate(90deg); }
+.snake span:nth-child(3) { transform:rotate(180deg); }
+.snake span:nth-child(4) { transform:rotate(270deg); }
+
+.snake span:nth-child(1):before { animation-delay:0s; }
+.snake span:nth-child(4):before { animation-delay:.5s; }
+.snake span:nth-child(3):before { animation-delay:1s; }
+.snake span:nth-child(2):before { animation-delay:1.5s; }
+
+@keyframes animate { 0% { left:100%; }
+                    50%,100%{ left:-100%; } }
+
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+
+
+<div class = "container">
+
+<div class = "snake">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+</div>
+
+
+
+
+</body>
+</html>
